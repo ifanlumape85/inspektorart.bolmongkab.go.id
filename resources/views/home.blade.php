@@ -94,24 +94,6 @@
                     <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
                     <div id="gpr-kominfo-widget-container"></div>
                 </div>
-                <row>
-                    <div class="col-12">
-                        <h4 class="entry-title">Peraturan Bupati</h4>
-                        <p>
-                            <a href="/perbub/PERBUP NO 49 TAHUN 2021.pdf">PERBUB NO 49 TAHUN 2021</a>
-                        </p>
-                        <p>
-                            <a href="/perbub/Lampiran 1 PERBUP No 49 Tahun 2021.pdf">LAMPIRAN 1 PERBUB NO 49 TAHUN 2021</a>
-                        </p>
-                        <p>
-                            <a href="/perbub/Lampiran 2 PERBUP N0 49 Tahun 2021.pdf">LAMPIRAN 2 PERBUB NO 49 TAHUN 2021</a>
-                        </p>
-                        <p>
-                            <a href="/perbub/Lampiran 3 PERBUP NO 49 Tahun 2021.pdf">LAMPIRAN 3 PERBUB NO 49 TAHUN 2021</a>
-                        </p>
-
-                    </div>
-                </row>
             </div>
         </div>
     </div>
