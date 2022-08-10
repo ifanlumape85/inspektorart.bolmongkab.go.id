@@ -11,11 +11,14 @@
     </a>
 </div>
 
-<section id="welcome mt-4">
+<section id="welcome">
     <div class="container">
         <div class="row">
+
             <div class="col text-center">
+                <p>&nbsp;</p>
                 @if(Storage::disk('public')->exists($profile->profile_picture ?? null))
+
                 <img src="{{ Storage::url($profile->profile_picture ?? null) }}" alt="" class="mb-4 img-thumbnail image" style="object-fit:cover; object-position:center; width:400px;">
                 @endif
                 {!! $profile->welcome_speech ?? null !!}
