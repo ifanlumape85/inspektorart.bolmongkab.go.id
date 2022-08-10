@@ -165,19 +165,6 @@
             </div>
             @endif
         </div>
-
-        <div class="col">
-            <div class="row">
-                <div class="col">
-                    <a href="/infografis/WhatsApp Image 2022-04-11 at 09.15.55.jpeg" target="_blank"><img src="/infografis/WhatsApp Image 2022-04-11 at 09.15.55.jpeg" style="width: 400px;" /></a>
-                </div>
-                <div class="col">
-                    <a href="/infografis/WhatsApp Image 2022-04-11 at 09.15.56.jpeg" target="_blank"><img src="/infografis/WhatsApp Image 2022-04-11 at 09.15.56.jpeg" style="width: 400px;" /></a>
-
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>
 
