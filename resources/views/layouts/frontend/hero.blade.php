@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col text-center">
                 @if(Storage::disk('public')->exists($profile->profile_picture ?? null))
-                <img src="{{ Storage::url($profile->profile_picture ?? null) }}" alt="" class="mb-4 img-thumbnail image" style="object-fit:cover; object-position:center;">
+                <img src="{{ Storage::url($profile->profile_picture ?? null) }}" alt="" class="mb-4 img-thumbnail image" style="object-fit:cover; object-position:center; width:400px;">
                 @endif
                 {!! $profile->welcome_speech ?? null !!}
                 <p class="mt-2 font-weight-bolder">{{ $profile->departemen_head ?? null }}</p>

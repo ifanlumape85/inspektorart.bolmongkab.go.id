@@ -28,8 +28,6 @@
 <body>
     @include('layouts.frontend.header')
     @include('layouts.frontend.hero')
-
-    
     <main id="main">
         @yield('content')
         @include('layouts.frontend.contact')
