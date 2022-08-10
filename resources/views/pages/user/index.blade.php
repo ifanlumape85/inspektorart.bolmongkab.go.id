@@ -17,13 +17,13 @@
 
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         @if(session()->has('success'))
                         <div class="alert alert-success">
                             {{ session()->get('success') }}
                         </div>
                         @endif
-                        <table class="table table-bordered">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th style="width: 10px">No</th>
@@ -31,7 +31,7 @@
                                     <th>Username</th>
                                     <th>Email</th>
                                     <th>Roles</th>
-                                    <th style="width: 120px">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

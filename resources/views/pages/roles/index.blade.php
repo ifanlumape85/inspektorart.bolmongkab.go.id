@@ -8,25 +8,27 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Role Management</h3>
+                            @can('role-create')
                             <a href="{{ route('roles.create') }}" class="btn btn-primary">
                                 <i class="fas fa-plus"></i> Create
                             </a>
+                            @endcan
                         </div>
 
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         @if(session()->has('success'))
                         <div class="alert alert-success">
                             {{ session()->get('success') }}
                         </div>
                         @endif
-                        <table class="table table-bordered">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th style="width: 10px">No</th>
                                     <th>Name</th>
-                                    <th style="width: 120px">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
