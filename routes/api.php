@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\DisposisiPengaduanController;
 use App\Http\Controllers\Api\JenisController;
 use App\Http\Controllers\Api\JenisLayananController;
 use App\Http\Controllers\Api\LayananController;
+use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\PengaduanController;
 use App\Http\Controllers\Api\PihakTerkaitController;
 use App\Http\Controllers\Api\TanggapanLayananController;
@@ -23,6 +24,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('news', [NewsController::class, 'index']);
 
 Route::post('users', [UserController::class, 'index']);
 Route::post('login', [UserController::class, 'login']);
