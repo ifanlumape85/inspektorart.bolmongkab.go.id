@@ -16,7 +16,7 @@ class LayananController extends Controller
     public function index(Request $request)
     {
         if ($request->id_role == "2") {
-            $items = Layanan::with('user', 'jenis', 'jenis_layanan')
+            $items = Layanan::with('user', 'jenis','jenis_layanan', 'tanggapan')
                 ->where(function ($query) use ($request) {
                     return $request->input('id') ?
                         $query->where('layanans.id_user', $request->input('id')) : '';
@@ -35,7 +35,7 @@ class LayananController extends Controller
                 'layanans.created_at',
                 'layanans.updated_at',
                 'layanans.status'
-            ])->with('user', 'jenis', 'jenis_layanan')
+            ])->with('user', 'jenis','jenis_layanan', 'tanggapan')
                 ->where(function ($query) use ($request) {
                     return $request->input('id') ?
                         $query->where('disposisi_layanans.id_user', $request->input('id')) : '';
@@ -43,7 +43,7 @@ class LayananController extends Controller
                 ->orderBy('layanans.id', 'desc')
                 ->skip($request->input('start') ?? 0)->take($request->input('limit') ?? 10)->get();
         } else {
-            $items = Layanan::with('user', 'jenis', 'jenis_layanan')
+            $items = Layanan::with('user', 'jenis','jenis_layanan', 'tanggapan')
                 ->where(function ($query) use ($request) {
                     return $request->input('query') ?
                         $query->where('layanans.deskripsi', 'LIKE', '%' . $request->input('query') . '%') : '';

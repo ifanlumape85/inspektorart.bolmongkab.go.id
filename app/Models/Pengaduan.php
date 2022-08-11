@@ -23,4 +23,9 @@ class Pengaduan extends Model
     {
         return $this->hasMany(PihakTerkait::class, 'id_pengaduan', 'id');
     }
+
+    public function tanggapan()
+    {
+        return $this->hasMany(TanggapanPengaduan::class, 'id_pengaduan', 'id');
+    }
 }

@@ -15,7 +15,7 @@ class PengaduanController extends Controller
     public function index(Request $request)
     {
         if ($request->id_role == "2") {
-            $items = Pengaduan::with('user', 'pihak_terkait')->where(function ($query) use ($request) {
+            $items = Pengaduan::with('user', 'pihak_terkait', 'tanggapan')->where(function ($query) use ($request) {
                 return $request->input('id') ?
                     $query->where('pengaduans.id_user', $request->input('id')) : '';
             })->where(function ($query) use ($request) {
@@ -38,7 +38,7 @@ class PengaduanController extends Controller
                 'pengaduans.created_at',
                 'pengaduans.updated_at',
                 'pengaduans.status'
-            ])->with('user', 'pihak_terkait')
+            ])->with('user','pihak_terkait', 'tanggapan')
                 ->where(function ($query) use ($request) {
                     return $request->input('id') ?
                         $query->where('disposisi_pengaduans.id_user', $request->input('id')) : '';
@@ -46,7 +46,7 @@ class PengaduanController extends Controller
                 ->orderBy('pengaduans.id', 'desc')
                 ->skip($request->input('start') ?? 0)->take($request->input('limit') ?? 10)->get();
         } else {
-            $items = Pengaduan::with('user', 'pihak_terkait')
+            $items = Pengaduan::with('user','pihak_terkait', 'tanggapan')
                 ->where(function ($query) use ($request) {
                     return $request->input('query') ?
                         $query->where('pengaduans.judul', 'LIKE', '%' . $request->input('query') . '%') : '';

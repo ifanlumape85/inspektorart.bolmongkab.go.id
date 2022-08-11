@@ -34,21 +34,31 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'nik' => ['required', 'integer', 'unique:users,nik'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'unique:users,email'],
-            'password' => ['required', 'min:6'],
-            'photo' => ['required']
+            'telpon' => ['required', 'unique:users,telpon'],
+            'password' => ['required', 'min:6']
         ]);
 
         if ($validator->fails()) {
             $response = [
                 'code' => '2',
-                'message' => 'Lengkapi form'
+                'message' => $validator->errors()->first()
             ];
-            return response()->json($validator->errors(), 422);
+            return response()->json($response, 200);
         }
 
         try {
+
+            if ($request->password != $request->password_confirm){
+                $response = [
+                    'code' => '2',
+                    'message' => 'Password tidak sama.'
+                ];
+                return response()->json($response, 200);
+            }
+
             if ($request->photo) {
                 $image = $request->photo;
                 $image = str_replace('data:image/png;base64,', '', $image);
@@ -57,20 +67,28 @@ class UserController extends Controller
                 Storage::disk('local')->put('/public/assets/photo/' . $imageName, base64_decode($image));
 
                 $user = [
+                    'nik' => $request->nik,
                     'name' => $request->name,
                     'email' => $request->email,
+                    'telpon' => $request->telpon,
+                    'username' => $request->telpon,
                     'password' => bcrypt($request->password),
                     'photo' => 'assets/photo/' . $imageName
                 ];
             } else {
                 $user = [
+                    'nik' => $request->nik,
                     'name' => $request->name,
                     'email' => $request->email,
+                    'telpon' => $request->telpon,
+                    'username' => $request->telpon,
                     'password' => bcrypt($request->password)
                 ];
             }
 
-            User::create($user);
+            $user = User::create($user);
+
+            $user->assignRole([2]);
 
             $response = [
                 'code' => '1',

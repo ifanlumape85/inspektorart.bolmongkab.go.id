@@ -33,4 +33,9 @@ class Layanan extends Model
     {
         return $this->belongsToMany(User::class, 'layanan_users', 'id_layanan', 'id_user');
     }
+
+    public function tanggapan()
+    {
+        return $this->hasMany(TanggapanLayanan::class, 'id_layanan', 'id');
+    }
 }

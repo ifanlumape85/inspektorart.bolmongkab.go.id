@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\JenisLayananController;
 use App\Http\Controllers\Api\LayananController;
 use App\Http\Controllers\Api\PengaduanController;
 use App\Http\Controllers\Api\PihakTerkaitController;
+use App\Http\Controllers\Api\TanggapanLayananController;
+use App\Http\Controllers\Api\TanggapanPengaduanController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +28,16 @@ Route::post('users', [UserController::class, 'index']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('change_profile', [UserController::class, 'update']);
 Route::post('logout', [UserController::class, 'logout']);
+Route::post('register', [UserController::class, 'store']);
+
 Route::post('pengaduans', [PengaduanController::class, 'index']);
 Route::post('layanans', [LayananController::class, 'index']);
 
 Route::post('store_disposisi_layanan', [DisposisiLayananController::class, 'store']);
 Route::post('store_disposisi_pengaduan', [DisposisiPengaduanController::class, 'store']);
+
+Route::post('store_tanggapan_layanan', [TanggapanLayananController::class, 'store']);
+Route::post('store_tanggapan_pengaduan', [TanggapanPengaduanController::class, 'store']);
 
 Route::post('store_layanan', [LayananController::class, 'store']);
 Route::post('update_layanan', [LayananController::class, 'update']);
