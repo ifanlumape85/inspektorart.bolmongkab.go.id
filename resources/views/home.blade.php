@@ -74,14 +74,14 @@
                                 </ul>
                             </div>
 
-                            <div class="entry-content">
+                            <!-- <div class="entry-content">
                                 <p>
                                     {{ Str::limit($item->body ?? null, 100) }}
                                 </p>
                                 <div class="read-more">
                                     <a href="{{ route('detail-news', $item->slug) }}">Selengkapnya</a>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </article><!-- End blog entry -->
                     </div>
