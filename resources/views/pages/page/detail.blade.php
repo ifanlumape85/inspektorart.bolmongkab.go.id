@@ -22,7 +22,7 @@
     </div>
 
     <div class="entry-content">
-        <p>{!! nl2br(e($item->body ?? null)) !!}</p>
+        <p>{!! $item->body ?? null !!}</p>
     </div>
 
     <div class="entry-footer clearfix">
