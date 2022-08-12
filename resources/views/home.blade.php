@@ -8,6 +8,7 @@
     });
 
     function slide() {
+
         $.ajax({
             url: 'https://bolmongkab.go.id/api/slider',
             type: "GET",
@@ -15,7 +16,8 @@
             success: function(response) {
                 $('.carousel-indicators').html("");
                 $('.carousel-inner').html("");
-                if (response.success == true) {
+                if (response.response.status == 200) {
+
                     $.each(response.data.data, function(index, value) {
                         var classActive;
                         index == 0 ? classActive = 'active' : classActive = '';

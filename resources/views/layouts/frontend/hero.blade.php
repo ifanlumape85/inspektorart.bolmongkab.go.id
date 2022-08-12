@@ -1,3 +1,5 @@
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators"></ol>
     <div class="carousel-inner"></div>
@@ -16,7 +18,6 @@
         <div class="row">
 
             <div class="col text-center">
-                <p>&nbsp;</p>
                 @if(Storage::disk('public')->exists($profile->profile_picture ?? null))
 
                 <img src="{{ Storage::url($profile->profile_picture ?? null) }}" alt="" class="mb-4 img-thumbnail image" style="object-fit:cover; object-position:center; width:400px;">
