@@ -119,4 +119,9 @@ class HomeController extends Controller
             'breadcrumb_title'
         ));
     }
+
+    public function privacy()
+    {
+        return view('privacy');
+    }
 }

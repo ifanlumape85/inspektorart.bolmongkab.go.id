@@ -46,6 +46,7 @@ Auth::routes([
 ]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 Route::get('/events', [HomeController::class, 'event'])->name('events');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/perizinan', [PerizinanController::class, 'listperizinan'])->name('perizinan');
